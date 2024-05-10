@@ -102,6 +102,7 @@ modules:
         from: kmille@darmstadt.ccc.de
         to: mail-test2@androidloves.me
       receiver: imap
+      receiver_delay: 15s
       imap:
         server: beeftraeger.wurbz.de
         port: 993

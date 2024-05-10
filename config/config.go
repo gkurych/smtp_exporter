@@ -199,6 +199,7 @@ type SMTPProbe struct {
 	Body               string            `yaml:"body,omitempty"`
 	ValidStatusCodes   []int             `yaml:"valid_status_codes,omitempty"`
 	Receiver           string            `yaml:"receiver,omitempty"`
+	ReceiverDelay      time.Duration     `yaml:"receiver_delay,omitempty"`
 	IMAP               IMAPReceiver      `yaml:"imap,omitempty"`
 }
 

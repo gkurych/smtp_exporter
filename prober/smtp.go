@@ -211,6 +211,8 @@ func SMTPProber(ctx context.Context, target string, module config.Module, regist
 	if len(module.SMTP.Receiver) == 0 {
 		result.Success = true
 	} else if module.SMTP.Receiver == "imap" {
+		level.Debug(logger).Log("msg", "Configured ReceiverDelay", "receiver_delay", module.SMTP.ReceiverDelay)
+		time.Sleep(module.SMTP.ReceiverDelay)
 		success := IMAPReceiver(ctx, subject, module.SMTP.IMAP, registry, logger)
 		result.Success = success
 	}
